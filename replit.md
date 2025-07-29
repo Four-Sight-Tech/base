@@ -6,12 +6,14 @@ FourSight is a modern, responsive landing page for an AI-powered website buildin
 
 ## Recent Changes
 
-- **January 29, 2025**: Rebranded from SiteForge to FourSight with custom logo design
-- Created complete landing page with hero section, features, AI benefits, testimonials, pricing, and FAQ
-- Implemented FourSight logo as SVG with gradient design representing four perspectives/insights
-- Added dark mode support throughout all components
-- Integrated newsletter signup functionality with backend API
-- Built responsive navigation with mobile menu support
+- **January 29, 2025**: Updated navigation structure to About Us, Contact Us, and Pricing sections
+- Rebranded from SiteForge to FourSight with custom logo design
+- Created About Us section highlighting company values and mission
+- Built Contact Us section with form functionality and contact information
+- Configured project for static site deployment to GitHub Pages
+- Added GitHub Actions workflow for automatic deployment
+- Created build scripts and deployment documentation
+- Streamlined page structure focusing on essential business sections
 
 ## User Preferences
 
@@ -39,9 +41,11 @@ Preferred communication style: Simple, everyday language.
 ### Key Components
 
 #### Frontend Components
-- **Landing Page**: Marketing website with hero section, features, benefits, testimonials, pricing, and FAQ
+- **Landing Page**: Marketing website with hero section, about us, contact form, and pricing
+- **About Section**: Company story, values, and mission with animated content
+- **Contact Section**: Professional contact form with company information
 - **UI Components**: Complete set of accessible components including forms, navigation, dialogs, and data display
-- **Theme System**: Light/dark mode support with CSS custom properties
+- **Static Site Configuration**: Optimized for GitHub Pages deployment
 - **Responsive Design**: Mobile-first approach with responsive layouts
 
 #### Backend Services

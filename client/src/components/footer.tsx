@@ -149,18 +149,18 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => scrollToSection("features")}
+                  onClick={() => scrollToSection("about")}
                   className="text-gray-400 hover:text-white transition duration-200"
                 >
-                  Features
+                  About Us
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("benefits")}
+                  onClick={() => scrollToSection("contact")}
                   className="text-gray-400 hover:text-white transition duration-200"
                 >
-                  AI Benefits
+                  Contact Us
                 </button>
               </li>
               <li>
@@ -178,7 +178,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition duration-200">
-                  Integrations
+                  Documentation
                 </a>
               </li>
             </ul>
