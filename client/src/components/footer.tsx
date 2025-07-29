@@ -2,9 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 // FourSight Logo Component
@@ -33,44 +30,6 @@ function FourSightLogo({ className = "text-3xl" }: { className?: string }) {
 
 export default function Footer() {
   const [email, setEmail] = useState("");
-  const { toast } = useToast();
-
-  const newsletterMutation = useMutation({
-    mutationFn: async (email: string) => {
-      return apiRequest("POST", "/api/newsletter", { email });
-    },
-    onSuccess: () => {
-      toast({
-        title: "Success!",
-        description: "You've been subscribed to our newsletter.",
-      });
-      setEmail("");
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to subscribe to newsletter.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    newsletterMutation.mutate(email);
-  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -96,7 +55,7 @@ export default function Footer() {
             {/* Newsletter Signup */}
             <div className="mb-6">
               <h4 className="text-lg font-semibold mb-3">Stay Updated</h4>
-              <form onSubmit={handleNewsletterSubmit} className="flex">
+              <div className="flex">
                 <Input
                   type="email"
                   placeholder="Enter your email"
@@ -105,13 +64,27 @@ export default function Footer() {
                   className="bg-gray-800 border-gray-700 text-white rounded-r-none focus:border-primary"
                 />
                 <Button
-                  type="submit"
-                  disabled={newsletterMutation.isPending}
+                  onClick={() => {
+                    if (email) {
+                      const subject = "Newsletter Subscription Request";
+                      const body = `Hi FourSight team,
+
+I would like to subscribe to your newsletter with the following email address:
+${email}
+
+Thank you!`;
+                      
+                      const mailtoLink = `mailto:hello@foursight.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                      window.open(mailtoLink, '_blank');
+                      setEmail("");
+                    }
+                  }}
+                  disabled={!email}
                   className="bg-gradient-to-r from-primary to-secondary rounded-l-none hover:shadow-lg transition duration-200"
                 >
-                  {newsletterMutation.isPending ? "..." : "Subscribe"}
+                  Subscribe
                 </Button>
-              </form>
+              </div>
             </div>
             
             {/* Social Links */}

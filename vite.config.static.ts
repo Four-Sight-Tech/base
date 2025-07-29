@@ -5,7 +5,7 @@ import path from 'path';
 // Static build configuration for GitHub Pages
 export default defineConfig({
   plugins: [react()],
-  base: '/foursight/', // Replace with your GitHub repository name
+  base: './', // For relative paths that work anywhere
   build: {
     outDir: 'dist',
     sourcemap: false,

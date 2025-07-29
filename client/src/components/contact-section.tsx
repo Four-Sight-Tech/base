@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const contactInfo = [
@@ -41,7 +41,7 @@ export default function ContactSection() {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -55,26 +55,35 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Create mailto link for static deployment
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. We'll get back to you within 24 hours.",
-      });
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-      });
+      const subject = formData.subject || "Contact Form Submission";
+      const body = `Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}`;
+      
+      const mailtoLink = `mailto:hello@foursight.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open email client
+      window.open(mailtoLink, '_blank');
+      
+      // Show success message and reset form
+      setTimeout(() => {
+        alert("Email client opened! Please send the email to complete your inquiry.");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+        setIsSubmitting(false);
+      }, 500);
+      
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
+      alert("Failed to open email client. Please contact us directly at hello@foursight.com");
       setIsSubmitting(false);
     }
   };

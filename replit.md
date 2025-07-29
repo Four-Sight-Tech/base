@@ -6,14 +6,14 @@ FourSight is a modern, responsive landing page for an AI-powered website buildin
 
 ## Recent Changes
 
-- **January 29, 2025**: Updated navigation structure to About Us, Contact Us, and Pricing sections
+- **January 29, 2025**: Configured project as fully static website for GitHub Pages deployment
+- Added custom pricing calculator with instant cost estimates based on user requirements
+- Converted all forms (contact, newsletter, pricing) to use mailto links for static deployment
+- Updated navigation structure to About Us, Contact Us, and Pricing sections
 - Rebranded from SiteForge to FourSight with custom logo design
 - Created About Us section highlighting company values and mission
 - Built Contact Us section with form functionality and contact information
-- Configured project for static site deployment to GitHub Pages
-- Added GitHub Actions workflow for automatic deployment
-- Created build scripts and deployment documentation
-- Streamlined page structure focusing on essential business sections
+- Removed all backend API dependencies for complete static hosting compatibility
 
 ## User Preferences
 

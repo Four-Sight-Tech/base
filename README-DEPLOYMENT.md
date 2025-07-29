@@ -4,7 +4,15 @@ This guide explains how to deploy FourSight as a static website to GitHub Pages.
 
 ## Static Site Deployment
 
-FourSight has been configured to work as a static website without a backend. The contact form and newsletter signup will work with form handling services or can be connected to serverless functions.
+FourSight has been configured to work as a static website without a backend. All forms (contact, newsletter, pricing calculator) use mailto links to open the user's email client, making it fully deployable on static hosting platforms.
+
+### Features Included in Static Version:
+- ✅ Custom pricing calculator with instant estimates
+- ✅ Contact form with mailto integration
+- ✅ Newsletter signup with mailto integration
+- ✅ Responsive design and animations
+- ✅ About Us and pricing sections
+- ✅ Full GitHub Pages compatibility
 
 ### Building for Static Deployment
 

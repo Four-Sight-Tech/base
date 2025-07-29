@@ -256,11 +256,75 @@ function PricingCalculator() {
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 This is a preliminary estimate based on your requirements
               </p>
+              
+              {/* Requirements Summary */}
+              <div className="text-left bg-white dark:bg-gray-800 p-4 rounded-lg mb-4 text-sm">
+                <h4 className="font-semibold mb-2">Project Summary:</h4>
+                <ul className="space-y-1 text-gray-600 dark:text-gray-300">
+                  <li>• Website Type: {websiteTypes.find(t => t.value === requirements.websiteType)?.label}</li>
+                  <li>• Number of Pages: {requirements.numberOfPages}</li>
+                  {requirements.features.length > 0 && (
+                    <li>• Features: {requirements.features.map(f => featureOptions.find(opt => opt.id === f)?.label).join(", ")}</li>
+                  )}
+                  {requirements.timeline && (
+                    <li>• Timeline: {requirements.timeline}</li>
+                  )}
+                  {requirements.customRequirements && (
+                    <li>• Custom Requirements: {requirements.customRequirements}</li>
+                  )}
+                </ul>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button variant="outline">
+                <Button 
+                  variant="outline"
+                  onClick={() => {
+                    const subject = `Website Quote Request - ${estimatedCost?.toLocaleString()}`;
+                    const body = `Hi FourSight team,
+
+I used your pricing calculator and received an estimate of $${estimatedCost?.toLocaleString()} for my project.
+
+Project Details:
+- Website Type: ${websiteTypes.find(t => t.value === requirements.websiteType)?.label}
+- Number of Pages: ${requirements.numberOfPages}
+- Features: ${requirements.features.map(f => featureOptions.find(opt => opt.id === f)?.label).join(", ")}
+- Timeline: ${requirements.timeline}
+- Additional Requirements: ${requirements.customRequirements}
+
+Please provide a detailed quote and let me know the next steps.
+
+Best regards`;
+                    
+                    const mailtoLink = `mailto:hello@foursight.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    window.open(mailtoLink, '_blank');
+                  }}
+                >
                   Get Detailed Quote
                 </Button>
-                <Button className="bg-gradient-to-r from-primary to-secondary text-white">
+                <Button 
+                  className="bg-gradient-to-r from-primary to-secondary text-white"
+                  onClick={() => {
+                    const subject = `Ready to Start Project - ${estimatedCost?.toLocaleString()}`;
+                    const body = `Hi FourSight team,
+
+I've calculated my project estimate at $${estimatedCost?.toLocaleString()} and I'm ready to start!
+
+Project Details:
+- Website Type: ${websiteTypes.find(t => t.value === requirements.websiteType)?.label}
+- Number of Pages: ${requirements.numberOfPages}
+- Features: ${requirements.features.map(f => featureOptions.find(opt => opt.id === f)?.label).join(", ")}
+- Timeline: ${requirements.timeline}
+- Additional Requirements: ${requirements.customRequirements}
+${requirements.contactInfo ? `- Contact Email: ${requirements.contactInfo}` : ''}
+
+Let's get started!
+
+Best regards`;
+                    
+                    const mailtoLink = `mailto:hello@foursight.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    window.open(mailtoLink, '_blank');
+                  }}
+                >
                   Start Project
                 </Button>
               </div>
