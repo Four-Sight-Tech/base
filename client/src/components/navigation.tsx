@@ -47,31 +47,26 @@ export default function Navigation() {
             </div>
           </div>
           
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary transition duration-200"
-              >
-                About Us
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary transition duration-200"
-              >
-                Contact Us
-              </button>
-              <button
-                onClick={() => scrollToSection("pricing")}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary transition duration-200"
-              >
-                Pricing
-              </button>
-            </div>
-          </div>
-          
-          <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:scale-105 transition duration-200">
+          <div className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-gray-600 dark:text-gray-300 hover:text-primary transition duration-200 font-medium"
+            >
+              About Us
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-gray-600 dark:text-gray-300 hover:text-primary transition duration-200 font-medium"
+            >
+              Contact Us
+            </button>
+            <button
+              onClick={() => scrollToSection("pricing")}
+              className="text-gray-600 dark:text-gray-300 hover:text-primary transition duration-200 font-medium"
+            >
+              Pricing
+            </button>
+            <Button className="bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:scale-105 transition duration-200 ml-4">
               Get Started Free
             </Button>
           </div>
