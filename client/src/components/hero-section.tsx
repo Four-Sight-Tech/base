@@ -4,7 +4,7 @@ import { Rocket, Play, CheckCircle } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen flex items-center">
+    <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           <motion.div
@@ -13,14 +13,14 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               Build Your{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Dream Website
               </span>{" "}
               in Hours
             </h1>
-            <p className="mt-6 text-xl text-gray-600 max-w-2xl">
+            <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
               Empower your business with our AI-powered website builder. No coding required.
               Drag, drop, and launch your professional website with smart templates and automated content generation.
             </p>
@@ -43,7 +43,7 @@ export default function HeroSection() {
               </Button>
             </div>
             
-            <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-500">
+            <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center">
                 <CheckCircle className="text-accent mr-2 h-4 w-4" />
                 Free 14-day trial
@@ -75,22 +75,22 @@ export default function HeroSection() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-              className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-4"
+              className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4"
             >
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-accent rounded-full"></div>
-                <span className="text-sm font-medium text-gray-700">Website Live!</span>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Website Live!</span>
               </div>
             </motion.div>
             
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 3, repeat: Infinity, delay: 2 }}
-              className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4"
+              className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4"
             >
               <div className="flex items-center space-x-2">
                 <span className="text-secondary">✨</span>
-                <span className="text-sm font-medium text-gray-700">AI Generated</span>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">AI Generated</span>
               </div>
             </motion.div>
           </motion.div>

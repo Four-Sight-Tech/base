@@ -24,7 +24,7 @@ const benefits = [
 
 export default function AIBenefitsSection() {
   return (
-    <section id="benefits" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="benefits" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div
@@ -33,10 +33,10 @@ export default function AIBenefitsSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Powered by Advanced AI Technology
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
               Our GenAI engine learns from millions of successful websites to help you create professional,
               converting websites that match your brand and industry.
             </p>
@@ -55,8 +55,8 @@ export default function AIBenefitsSection() {
                     <benefit.icon className="text-white h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h4>
-                    <p className="text-gray-600">{benefit.description}</p>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{benefit.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300">{benefit.description}</p>
                   </div>
                 </motion.div>
               ))}

@@ -18,7 +18,7 @@ const testimonials = [
     name: "Emma Thompson",
     company: "Digital Agency",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-    content: "As a busy entrepreneur, I needed something fast and professional. SiteForge delivered both. The AI chatbot handles 80% of our customer inquiries automatically."
+    content: "As a busy entrepreneur, I needed something fast and professional. FourSight delivered both. The AI chatbot handles 80% of our customer inquiries automatically."
   }
 ];
 
@@ -30,7 +30,7 @@ const stats = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,11 +39,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Trusted by 50,000+ Entrepreneurs
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See how businesses like yours are succeeding with SiteForge
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            See how businesses like yours are succeeding with FourSight
           </p>
         </motion.div>
         
@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition duration-300"
+              className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 hover:shadow-xl transition duration-300"
             >
               <div className="flex items-center mb-4">
                 <img
@@ -64,8 +64,8 @@ export default function TestimonialsSection() {
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.company}</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.company}</p>
                 </div>
               </div>
               <div className="flex mb-4">
@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
                   <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <p className="text-gray-600 italic">{testimonial.content}</p>
+              <p className="text-gray-600 dark:text-gray-300 italic">{testimonial.content}</p>
             </motion.div>
           ))}
         </div>
@@ -89,8 +89,8 @@ export default function TestimonialsSection() {
           <div className="flex justify-center items-center space-x-8 opacity-60">
             {stats.map((stat, index) => (
               <div key={stat.label} className="flex flex-col items-center">
-                <div className="text-2xl font-bold text-gray-400">{stat.value}</div>
-                <div className="text-sm text-gray-500">{stat.label}</div>
+                <div className="text-2xl font-bold text-gray-400 dark:text-gray-500">{stat.value}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>

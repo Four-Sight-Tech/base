@@ -7,6 +7,30 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
+// FourSight Logo Component
+function FourSightLogo({ className = "text-3xl" }: { className?: string }) {
+  return (
+    <div className={`flex items-center ${className}`}>
+      <svg width="32" height="32" viewBox="0 0 32 32" className="mr-2">
+        <defs>
+          <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(214, 84%, 56%)" />
+            <stop offset="50%" stopColor="hsl(264, 69%, 64%)" />
+            <stop offset="100%" stopColor="hsl(164, 78%, 45%)" />
+          </linearGradient>
+        </defs>
+        <rect x="4" y="4" width="8" height="8" rx="2" fill="url(#footerLogoGradient)" />
+        <rect x="20" y="4" width="8" height="8" rx="2" fill="url(#footerLogoGradient)" opacity="0.8" />
+        <rect x="4" y="20" width="8" height="8" rx="2" fill="url(#footerLogoGradient)" opacity="0.6" />
+        <rect x="20" y="20" width="8" height="8" rx="2" fill="url(#footerLogoGradient)" opacity="0.9" />
+      </svg>
+      <span className="font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        FourSight
+      </span>
+    </div>
+  );
+}
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
@@ -62,9 +86,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <span className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                SiteForge
-              </span>
+              <FourSightLogo />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Empowering entrepreneurs and small businesses to create professional websites
@@ -198,7 +220,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 SiteForge. All rights reserved.
+            © 2024 FourSight. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-200">

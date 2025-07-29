@@ -1,8 +1,17 @@
-# Website Builder Application
+# FourSight - AI-Powered Website Builder
 
 ## Overview
 
-This is a full-stack website builder application with AI-powered content generation capabilities. The application features a modern React frontend with a comprehensive component library (shadcn/ui) and an Express.js backend with PostgreSQL database integration using Drizzle ORM.
+FourSight is a modern, responsive landing page for an AI-powered website building service targeting entrepreneurs and small businesses. The application features a React frontend with comprehensive component library (shadcn/ui), custom SVG logo design, and an Express.js backend with newsletter subscription functionality.
+
+## Recent Changes
+
+- **January 29, 2025**: Rebranded from SiteForge to FourSight with custom logo design
+- Created complete landing page with hero section, features, AI benefits, testimonials, pricing, and FAQ
+- Implemented FourSight logo as SVG with gradient design representing four perspectives/insights
+- Added dark mode support throughout all components
+- Integrated newsletter signup functionality with backend API
+- Built responsive navigation with mobile menu support
 
 ## User Preferences
 

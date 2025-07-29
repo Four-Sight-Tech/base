@@ -25,13 +25,13 @@ const faqs = [
   },
   {
     question: "Is there a free trial?",
-    answer: "Yes! We offer a 14-day free trial with full access to all features. No credit card required to start. You can build, customize, and even publish your website during the trial period to see if SiteForge is right for you."
+    answer: "Yes! We offer a 14-day free trial with full access to all features. No credit card required to start. You can build, customize, and even publish your website during the trial period to see if FourSight is right for you."
   }
 ];
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="py-20 bg-white">
+    <section id="faq" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,10 +40,10 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Everything you need to know about getting started
           </p>
         </motion.div>
@@ -60,12 +60,12 @@ export default function FAQSection() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-gray-50 rounded-xl border-none"
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl border-none"
               >
-                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:no-underline">
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 dark:text-white hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-gray-600">
+                <AccordionContent className="px-6 pb-4 text-gray-600 dark:text-gray-300">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
