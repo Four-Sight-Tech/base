@@ -10,8 +10,8 @@ import Home from "@/pages/home";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
+      <Route component={Home} />
+      <Route path="/" component={NotFound} />
     </Switch>
   );
 }
